@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Reload : MonoBehaviour
 {
-    [SerializeField] private JsonDownloader jsonDownloader;
-    
+    [SerializeField] private RootManager rootManager;
+
+    [SerializeField] private Button bton;
+
+    private void Start()
+    {
+        bton.onClick.AddListener(ReloadList);
+    }
+
     public void ReloadList()
     {
-        jsonDownloader.LoadData(model => { });
+        rootManager.Init();
     }
 }

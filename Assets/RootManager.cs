@@ -8,10 +8,11 @@ public class RootManager : MonoBehaviour
     
     void Start()
     {
-        jsonDownloader.LoadData(model =>
-        {
-            canvasManager.GiveListItem(model.main_category.items);
-        });
+        Init();
     }
-    
+
+    public void Init()
+    {
+        jsonDownloader.LoadData(model => { canvasManager.GiveListItem(model.main_category.items); });
+    }
 }
